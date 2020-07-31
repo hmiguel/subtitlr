@@ -9,6 +9,7 @@ class VideoEventHandler(RegexMatchingEventHandler):
         super().__init__(self.VIDEO_REGEX)
 
     def on_created(self, event):
+        print(f"! new video => {event.src_path}")
         self.rename_original_subtitles(event)
         self.get_subtitles(event)
 

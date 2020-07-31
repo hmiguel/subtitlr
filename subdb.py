@@ -17,6 +17,7 @@ class SubDb(object):
     def __request(self, action, language = None):
         url = f"http://api.thesubdb.com/?action={action}&hash={self.hash}" + (f"&language={language}" if language else "")
         header = {"user-agent": "SubDB/1.0 (subtitlr/1.0; https://github.com/hmiguel/subtitlr.git)"}
+        print(f"subdb request {action} : {url}")
         req = requests.get(url, headers=header)
         if req.status_code != 200:
             raise Exception(f'SubDub exception: {req.status_code}')
