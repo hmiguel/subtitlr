@@ -18,7 +18,10 @@ class VideoEventHandler(RegexMatchingEventHandler):
         if os.path.isfile(f"{filename}.srt"):
             os.rename(f"{filename}.srt",f"{filename}.original.srt")
 
-    def get_subtitles(self, event):
-        s = subdb.SubDb(event.src_path)
-        available_languages = s.get_available_languages()
-        s.download(utils.get_prefered_language(available_languages))
+    def get_subtitles(self, event):     
+        try:
+            s = subdb.SubDb(event.src_path)
+            available_languages = s.get_available_languages()
+            s.download(utils.get_prefered_language(available_languages))
+        except Exception as e:
+            print(f"error getting subtitles: {e}")
