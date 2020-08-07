@@ -1,13 +1,19 @@
 # subtitlr
  
-git clone https://github.com/hmiguel/subtitlr
+<div class="termy">
 
-cd subtitlr/
+```console
+$ git clone https://github.com/hmiguel/subtitlr
 
-python -m venv env
+$ cd subtitlr/
 
-source env/bin/activate
+$ python -m venv env
 
-pip install -r requirements.txt
+$ source env/bin/activate
 
-python main.py <folder_to_watch>
+$ pip install -r requirements.txt
+
+$ python main.py <folder_to_watch>
+
+```
+</div>
